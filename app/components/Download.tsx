@@ -40,21 +40,26 @@ const Download: React.FC = () => {
 			<div className="w-full flex flex-col items-center gap-4 mt-12 px-10">
 				<h2
 					id="Downloads-heading"
-					className="text-xl text-center font-rubik font-medium"
+					className="text-xl lg:text-2xl text-center font-rubik font-medium"
 				>
 					Download the extension
 				</h2>
-				<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik">
+				<p className="text-neutral-grayish-blue lg:hidden text-center text-[14px] font-rubik">
 					We've got more browsers in the pipeline. Please do let us know if
+					you've got a favorite you'd like us to prioritize.
+				</p>
+
+				<p className="text-neutral-grayish-blue hidden lg:block text-center text-[14px] font-rubik">
+					We've got more browsers in the pipeline. Please do let us know if <br />
 					you've got a favorite you'd like us to prioritize.
 				</p>
 			</div>
 
-			<div className="w-full flex flex-col gap-4 items-center mt-8">
+			<div className="w-full flex flex-col gap-4 items-center mt-8 lg:flex-row lg:px-[15vw] lg:gap-8 ">
 				{cardData.map((card, index) => {
 					return (
 						<div
-							className="w-[80vw] rounded-2xl shadow-xl flex flex-col items-center py-6  pt-8 gap-6"
+							className={`w-[80vw] rounded-2xl shadow-md flex    flex-col items-center py-6  pt-8 gap-6 ${card.id === 2 ? 'mt-14': card.id === 3 ? 'mt-28' : ''}`}
 							key={card.id}
 						>
 							<div className="w-24 h-24 relative">
@@ -80,6 +85,8 @@ const Download: React.FC = () => {
 									text={card.buttonText}
 									bgColor="bg-primary-soft-blue"
 									textColor="text-white"
+									shadow="sm"
+									className="border-2 border-primary-soft-blue hover:bg-transparent hover:text-primary-soft-blue hover:border-primary-soft-blue transition-colors duration-300 px-12"
 								/>
 							</div>
 						</div>

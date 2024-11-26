@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import ButtonMain from "./ui/ButtonMain";
 
 interface TabContent {
 	id: number;
@@ -45,27 +46,35 @@ const Features: React.FC = () => {
 		setActiveTab(tabId);
 	};
 
+	console.log(activeTab);
+
 	return (
 		<section className="w-full h-fit pb-16" aria-labelledby="features-heading ">
-			<div className="w-full flex flex-col items-center gap-4 px-10">
+			<div className="w-full flex flex-col items-center gap-4 px-10 lg:mb-10">
 				<h2
 					id="features-heading"
 					className="text-xl text-center font-rubik font-medium"
 				>
 					Features
 				</h2>
-				<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik">
+				<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik lg:hidden">
 					Our aim is to make it quick and easy for you to access your favorite
 					websites. Your bookmarks sync between your devices so you can access
 					them on the go.
 				</p>
+
+				<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik hidden lg:block">
+					Our aim is to make it quick and easy for you to access your <br />{" "}
+					favorite websites. Your bookmarks sync between your devices <br /> so
+					you can access them on the go.
+				</p>
 			</div>
 
-			<div className="w-full h-fit flex flex-col px-8 mt-10">
+			<div className="w-full lg:w-fit lg:m-auto h-fit flex flex-col  px-8 mt-10 ">
 				<div
 					role="tablist"
 					aria-label="Feature tabs"
-					className="w-full flex flex-col items-center justify-center border-b border-b-neutral-grayish-blue border-opacity-50 "
+					className="w-full  flex flex-col items-center justify-center border-b border-b-neutral-grayish-blue border-opacity-50 lg:flex-row"
 				>
 					{tabData.map((tab) => (
 						<button
@@ -74,15 +83,15 @@ const Features: React.FC = () => {
 							aria-selected={activeTab === tab.id}
 							aria-controls={`tab-panel-${tab.id}`}
 							id={`tab-${tab.id}`}
-							className={`w-full text-body border-t border-t-neutral-grayish-blue border-opacity-50 text-neutral-grayish-blue font-regular font-rubik  
-                flex justify-center
-                hover:text-black focus:outline-none `}
+							className={`w-full text-body border-t border-t-neutral-grayish-blue  border-opacity-50 text-neutral-grayish-blue font-regular font-rubik  
+                flex justify-center lg:border-none
+                hover:text-primary-soft-red focus:outline-none `}
 							onClick={() => handleTabChange(tab.id)}
 						>
 							<div
-								className={`py-4 w-fit ${
+								className={`py-4 w-fit whitespace-nowrap border-b-4 border-b-transparent px-8 ${
 									activeTab === tab.id
-										? "border-b-4 border-b-red-400  font-regular text-black"
+										? " border-b-primary-soft-red  font-regular text-black"
 										: ""
 								}`}
 							>
@@ -100,7 +109,7 @@ const Features: React.FC = () => {
 					id={`tab-panel-${tab.id}`}
 					aria-labelledby={`tab-${tab.id}`}
 					hidden={activeTab !== tab.id}
-					className="mt-16"
+					className="mt-16 lg:hidden"
 				>
 					<div className="w-full relative mt-8">
 						<div className="w-[80vw] relative h-[24vh] m-auto">
@@ -121,6 +130,47 @@ const Features: React.FC = () => {
 						<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik">
 							{tab.description}
 						</p>
+					</div>
+				</div>
+			))}
+
+			{/* desktop view */}
+			{tabData.map((tab) => (
+				<div
+					key={tab.id}
+					role="tabpanel"
+					id={`tab-panel-${tab.id}`}
+					aria-labelledby={`tab-${tab.id}`}
+					hidden={activeTab !== tab.id}
+					className="mt-16 w-full hidden lg:flex items-center gap-10 px-[15vw]"
+				>
+					<div className="w-[50vw] relative mt-4">
+						<div className="w-[30vw] relative h-[34vh] ">
+							<Image
+								src={tab.image}
+								fill
+								alt={`${tab.title} illustration`}
+								sizes="(max-width: 768px) 80vw, (max-width: 1440px) 50vw, 33vw"
+							/>
+						</div>
+						<div className="w-[100vw] absolute top-20 right-20 z-[-1] h-[30vh] bg-primary-soft-blue rounded-r-full"></div>
+					</div>
+
+					<div className="w-[50vw] text-left flex flex-col items-start gap-4 mt-20 px-10">
+						<h3 className="text-2xl text-center font-rubik font-medium">
+							{tab.heading}
+						</h3>
+						<p className="text-neutral-grayish-blue text-left text-[14px] font-rubik">
+							{tab.description}
+						</p>
+
+						<ButtonMain
+							text="More Info"
+							textColor="text-white"
+							bgColor="bg-primary-soft-blue"
+							shadow="shadow-sm"
+							className="px-4"
+						/>
 					</div>
 				</div>
 			))}
