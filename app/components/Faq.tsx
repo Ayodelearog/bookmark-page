@@ -62,8 +62,8 @@ const Faq: React.FC = () => {
 					answered please feel free to email us.
 				</p>
 				<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik hidden lg:block">
-					Here are some of our FAQs. If you have any other questions <br /> you'd like
-					answered please feel free to email us.
+					Here are some of our FAQs. If you have any other questions <br />{" "}
+					you'd like answered please feel free to email us.
 				</p>
 			</div>
 
@@ -114,6 +114,7 @@ const Faq: React.FC = () => {
 					textColor="text-white"
 					bgColor="bg-primary-soft-blue"
 					shadow="shadow-sm"
+					className="px-4 rounded-md"
 				/>
 			</div>
 		</section>

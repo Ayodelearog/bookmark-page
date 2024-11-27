@@ -11,7 +11,7 @@ interface ButtonProps {
 const ButtonMain: React.FC<ButtonProps> = ({ text, bgColor, textColor, shadow, className }) => {
 	return (
 		<button
-			className={`w-fit py-4 px-4 rounded-lg text-[14px] font-rubik font-medium ${bgColor} ${textColor} ${shadow} ${className} `}
+			className={`w-fit py-4 px-10 rounded-md text-[14px] font-rubik font-medium ${bgColor} ${textColor} ${shadow} ${className} `}
 		>
 			{text ? text : "Get it on Chrome"}
 		</button>
