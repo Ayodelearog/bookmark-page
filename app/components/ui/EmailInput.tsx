@@ -53,7 +53,7 @@ const EmailInput: React.FC = () => {
 
         {isError && (
           <div className="w-full rounded-lg mt-1">
-            <p className="text-[12px] py-1 px-4 italic text-white">Whoops! Make sure it's an email</p>
+            <p className="text-[12px] py-1 px-4 italic text-white">Whoops! Make sure it&apos;s an email</p>
           </div>
         )}
       </div>

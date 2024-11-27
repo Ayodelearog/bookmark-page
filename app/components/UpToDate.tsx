@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import EmailInput from "./ui/EmailInput";
 
@@ -14,13 +13,13 @@ const UpToDate = () => {
 					id="Downloads-heading"
 					className="text-xl text-center font-rubik font-medium text-white lg:hidden"
 				>
-					Stay up-to-date with what we're doing
+					Stay up-to-date with what we&apos;re doing
 				</h2>
 				<h2
 					id="Downloads-heading"
 					className="text-xl text-center font-rubik font-medium text-white hidden lg:block"
 				>
-					Stay up-to-date with what <br /> we're doing
+					Stay up-to-date with what <br /> we&apos;re doing
 				</h2>
 			</div>
 

@@ -45,18 +45,18 @@ const Download: React.FC = () => {
 					Download the extension
 				</h2>
 				<p className="text-neutral-grayish-blue lg:hidden text-center text-[14px] font-rubik">
-					We've got more browsers in the pipeline. Please do let us know if
-					you've got a favorite you'd like us to prioritize.
+					We&apos;ve got more browsers in the pipeline. Please do let us know if
+					you&apos;ve got a favorite you&apos;d like us to prioritize.
 				</p>
 
 				<p className="text-neutral-grayish-blue hidden lg:block text-center text-[14px] font-rubik">
-					We've got more browsers in the pipeline. Please do let us know if <br />
-					you've got a favorite you'd like us to prioritize.
+					We&apos;ve got more browsers in the pipeline. Please do let us know if <br />
+					you&apos;ve got a favorite you&apos;d like us to prioritize.
 				</p>
 			</div>
 
 			<div className="w-full flex flex-col gap-4 items-center mt-8 lg:flex-row lg:px-[15vw] lg:gap-8 ">
-				{cardData.map((card, index) => {
+				{cardData.map((card) => {
 					return (
 						<div
 							className={`w-[80vw] rounded-2xl shadow-md flex    flex-col items-center py-6  pt-8 gap-6 ${card.id === 2 ? 'mt-14': card.id === 3 ? 'mt-28' : ''}`}

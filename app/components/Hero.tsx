@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
 							textColor="text-white"
 							text="Get it on Chrome"
 							shadow="shadow-md"
-							className="border-2 border-primary-soft-blue hover:bg-transparent hover:border-primary-soft-blue hover:text-primary-soft-blue transition-color duration-300"
+							className="border-2 border-primary-soft-blue hover:bg-transparent hover:border-primary-soft-blue hover:text-primary-soft-blue transition-color duration-300 "
 						/>
 						<ButtonMain
 							bgColor="bg-white"

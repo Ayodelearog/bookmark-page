@@ -58,12 +58,12 @@ const Faq: React.FC = () => {
 					Frequently Asked Questions
 				</h2>
 				<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik lg:hidden">
-					Here are some of our FAQs. If you have any other questions you'd like
+					Here are some of our FAQs. If you have any other questions you&apos;d like
 					answered please feel free to email us.
 				</p>
 				<p className="text-neutral-grayish-blue text-center text-[14px] font-rubik hidden lg:block">
 					Here are some of our FAQs. If you have any other questions <br />{" "}
-					you'd like answered please feel free to email us.
+					you&apos;d like answered please feel free to email us.
 				</p>
 			</div>
 
